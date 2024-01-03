@@ -16,8 +16,8 @@ jobs:
       - name: random cron
         run: |
           sed -i -E "s/(- cron: ')[0-9]+( [^[:space:]]+ \* \* \*')/\1$(($RANDOM % 59))\2/g" .github/workflows/run.yml
-          git config user.name wikiq
-          git config user.email qiws@msn.com
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git add .
           git commit -m "random cron"
           git push origin master
